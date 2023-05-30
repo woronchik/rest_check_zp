@@ -72,4 +72,3 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
 @app.get("/salary")
 async def get_salary(current_user: User = Depends(get_current_user)):
     return {"salary": current_user.salary, "next_raise": current_user.next_raise}
-
